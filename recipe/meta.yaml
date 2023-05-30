@@ -1,6 +1,6 @@
-{% set version = "0.3.1" %}
+{% set version = "0.4.0" %}
 {% set name = "intake-sql" %}
-{% set sha256 = "38cc7802e1495a0892c7e4814220b8e66063783019c8bed7a2fde2120077710b" %}
+{% set sha256 = "c79b0f7d484d569d990f32067cb01a5ef565522a657955d264b316a1b0c0d4c6" %}
 
 package:
   name: {{ name }}
