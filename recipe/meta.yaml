@@ -8,26 +8,28 @@ package:
 
 source:
   fn: {{ name }}-{{ version }}.tar.gz
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }}  -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
   host:
-    - python >=3.5
+    - python {{ python_min }}
     - pip
     - jinja2
   run:
-    - python >=3.5
+    - python >={{ python_min }}
     - intake >=0.3
     - pandas
     - sqlalchemy
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - intake_sql
 
